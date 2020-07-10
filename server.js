@@ -3,7 +3,7 @@ const path = require('path');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const{ notes } = require('./db/db.json');
-const { addNote, serverDeleteNote } = require('./lib/notes');
+const { addNote, idChecker } = require('./lib/notes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,7 +29,9 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-    
+    noteId = req.params.id;
+    idChecker(noteId, notes);
+    res.json({ message: 'success', data: req.body})
 })
 
 app.listen(PORT, () => {
