@@ -5,10 +5,12 @@ const app = express();
 const{ notes } = require('./db/db.json');
 const { addNote, idChecker } = require('./lib/notes');
 
+// set up middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
+// create routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
