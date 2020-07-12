@@ -1,5 +1,7 @@
 # Note Taker ![ISC Badge](https://img.shields.io/badge/License-ISC-brightgreen)
 
+[![Screenshot of Note Taker Landing Page](./public/assets/images/note-taker-screenshot.png)](https://immense-falls-72456.herokuapp.com/)
+
 ## Description
 
 Note Taker is a project created to allow users to create and save notes on a server database via a simple front-end web application. It utilizes express.js to handle server creation and is deployed on heroku.
